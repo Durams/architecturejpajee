@@ -19,7 +19,7 @@ public class Adresse {
 	private String nomRue;
 	private String cp;
 	private String ville;
-	
+	//ma classe adresse
 	@OneToMany(mappedBy="adresse")
 	private List<Personne> personnes = new ArrayList<Personne>();
 	
