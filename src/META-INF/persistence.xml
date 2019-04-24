@@ -1,0 +1,30 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="demojpa-pu">
+        <properties>
+        
+        <!--voir les choses dans la console-->
+            <property name="hibernate.archive.autodetection" value="class" />
+            <property name="hibernate.show_sql" value="true" /> 
+            <property name="hibernate.format_sql" value="true" />
+ 
+            <!-- Configuration de la  BDD -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/architecture" />
+            <property name="javax.persistence.jdbc.user" value="postgres" />
+            <property name="javax.persistence.jdbc.password" value="1988remi" />
+ 
+            <!-- Spécifie le 'dialecte' SQL utilisé pour communiquer avec la BDD, permet d'interchanger de bdd avec MySQL -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+ 
+            <!-- Indique a Hibernate de (re-)créer la BDD au lancement de l'application, crée les tables en bdd
+            une fois qu'on a crée la bdd il faut enlever la ligne sinon les données reviennent à 0,
+            on peut mettre update pour ajoute qqchose à ce qui existe dans la bbd à la place de create pour mettre à jour  -->
+            <!--  <property name="hibernate.hbm2ddl.auto" value="create" /> -->
+        </properties>
+ 
+    </persistence-unit>
+</persistence>
